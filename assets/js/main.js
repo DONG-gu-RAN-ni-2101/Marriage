@@ -385,6 +385,22 @@
 
 			}
 
+			//others_list
+
+			$(document).ready(function () {
+				$(".RSVP_Radio").change(function () {
+					$("[id^=optional_others]").toggle(this.value == 'Yes');
+				});
+			});
+
+
+			$(document).ready(function () {
+				$("[id^=others_list]").hide();
+				$(".Others_Radio").change(function () {
+					$("[id^=others_list]").toggle(this.value == 'Yes');
+				});
+			});
+
 		// Initialize.
 
 			// Hide main, articles.
@@ -397,5 +413,6 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+					
 
 })(jQuery);
